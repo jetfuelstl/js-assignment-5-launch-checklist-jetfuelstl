@@ -1,5 +1,11 @@
 // Write your JavaScript code here!
 
+//const { validateInput, formSubmission } = require("./scriptHelper");
+
+//const { formSubmission, validateInput } = require("./scriptHelper");
+
+//const { formSubmission } = require("./scriptHelper");
+
 // const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
@@ -19,9 +25,22 @@ window.addEventListener("load", function() {
        addDestinationInfo(document, selectPlanet.name, selectPlanet.diameter, selectPlanet.star, 
         selectPlanet.distance, selectPlanet.moons, selectPlanet.image );
 
-//is this selectPlanet.imageURL? ATT TA how do have a variable image?
-
    })
-   
+
+   //let button = document.getElementById("formSubmit");
+   let form = document.querySelector("form")
+    form.addEventListener("submit", function(event){
+    event.preventDefault() 
+    let list = document.getElementById('faultyItems')
+    let pilot = document.querySelector('[name="pilotName"]').value; 
+    let copilot = document.querySelector('[name="copilotName"]').value;
+    let fuelLevel = document.querySelector('[name="fuelLevel"]').value;
+    let cargoLevel = document.querySelector('[name="cargoMass"]').value;
+    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+
+   }
+   )
+  
+  
 });
 

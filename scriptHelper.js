@@ -1,5 +1,5 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
+//require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -14,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Distance from Earth: ${distance} </li>
                     <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src="imageUrl"> `;
+                <img src=${imageUrl}> `;
                 //
 
 //not sure how to call on an image, were the image is variable data like the other parameters?
@@ -34,7 +34,17 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
- let launchStatus = document.getElementById('launchStatus')  
+if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || 
+  validateInput(cargoLevel) === "Empty" ) {
+    alert("User left field empty"); 
+  } else if (validateInput(pilot) === "Is A Number" || validateInput(copilot) === "Is A Number" || validateInput(fuelLevel) === "Not A Number" || 
+  validateInput(cargoLevel) === "Not A Number") {
+    alert("Incorrect field type");
+
+
+  } else { 
+    
+let launchStatus = document.getElementById('launchStatus')  
 
 let pilotStatus = document.getElementById("pilotStatus")
     pilotStatus.innerHTML = `pilot ${pilot} ready`
@@ -46,24 +56,24 @@ let fuelStatus = document.getElementById("fuelStatus")
 if (fuelLevel < 10000 ) {
     fuelStatus.innerHTML = "Fuel level too low for launch." 
     faultyItems.style.visibility = "visable";
-    launchStatus.style.color = red 
+    launchStatus.style.color = 'red' 
     launchStatus.innerHTML = "Shuttle not ready for launch"
 }
-
 // let cargoLevel = document.getElementById("cargoMass") 
 
 if (cargoLevel > 10000) { 
     cargoLevel.innerHTML = "Too much cargo." 
     faultyItems.style.visibility = "visable";
-    launchStatus.style.color = red 
+    launchStatus.style.color = 'red' 
     launchStatus.innerHTML = "Shuttle not ready for launch"
 } else if (cargoLevel <= 10000 && fuelLevel > 10000 ) { 
     launchStatus.innerHTML = "Shuttle ready for launch"
-    launchStatus.style.color = green 
+    launchStatus.style.color = 'green' 
     faultyItems.style.visibility = "visable" 
 }
 
 
+}
 }
 
 
@@ -86,8 +96,8 @@ function pickPlanet(planets) {
 //return planet at random num
 }
 
-module.exports.addDestinationInfo = addDestinationInfo;
-module.exports.validateInput = validateInput;
-module.exports.formSubmission = formSubmission;
-module.exports.pickPlanet = pickPlanet; 
-module.exports.myFetch = myFetch;
+//module.exports.addDestinationInfo = addDestinationInfo;
+//module.exports.validateInput = validateInput;
+//module.exports.formSubmission = formSubmission;
+//module.exports.pickPlanet = pickPlanet; 
+//module.exports.myFetch = myFetch;

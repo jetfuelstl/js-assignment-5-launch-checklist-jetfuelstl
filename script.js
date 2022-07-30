@@ -1,8 +1,8 @@
 // Write your JavaScript code here!
-//const { validateInput, formSubmission } = require("./scriptHelper");
+const { validateInput, formSubmission } = require("./scriptHelper");
 //const { formSubmission, validateInput } = require("./scriptHelper");
 //const { formSubmission } = require("./scriptHelper");
-// const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
+const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 

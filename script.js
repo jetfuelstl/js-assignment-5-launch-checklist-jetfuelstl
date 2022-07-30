@@ -31,20 +31,24 @@ window.addEventListener("load", function() {
 
    })
 
-   //let button = document.getElementById("formSubmit");
-   let form = document.querySelector("form")
-    form.addEventListener("submit", function(event){
-    event.preventDefault() 
-    let list = document.getElementById('faultyItems')
-    let pilot = document.querySelector('[name="pilotName"]').value; 
-    let copilot = document.querySelector('[name="copilotName"]').value;
-    let fuelLevel = document.querySelector('[name="fuelLevel"]').value;
-    let cargoLevel = document.querySelector('[name="cargoMass"]').value;
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
-
-   }
-   )
-  
-  
 });
+
+
+   //gonna move this to script helper to trouble shoot faulty items 
+   //let button = document.getElementById("formSubmit");
+  // let form = document.querySelector("form")
+    //form.addEventListener("submit", function(event){
+    //event.preventDefault() 
+   // let list = document.getElementById('faultyItems')
+   // let pilot = document.querySelector('[name="pilotName"]').value; 
+  //  let copilot = document.querySelector('[name="copilotName"]').value;
+   // let fuelLevel = document.querySelector('[name="fuelLevel"]').value;
+   // let cargoLevel = document.querySelector('[name="cargoMass"]').value;
+    //formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+
+  // }
+  // )
+  
+  
+
 

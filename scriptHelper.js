@@ -20,31 +20,23 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 }
 function validateInput(testInput) {
-    let pilotInput;
+    let input;
 
     if (testInput === "") {
-        pilotInput = "Empty";
+        input = "Empty";
     } else if (isNaN(testInput)) {
-        pilotInput = "Not a number";
+        input = "Not a number";
     } else if (isNaN(testInput) === false) {
-        pilotInput = "Is a number";
+        input = "Is a number";
     };
 
-    return pilotInput;
+    return input;
 };
 
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || 
-  validateInput(cargoLevel) === "Empty" ) {
-    alert("User left field empty"); 
-  } else if (validateInput(pilot) === "Is A Number" || validateInput(copilot) === "Is A Number" || validateInput(fuelLevel) === "Not A Number" || 
-  validateInput(cargoLevel) === "Not A Number") {
-    alert("Incorrect field type");
 
-
-  } else { 
     
 let launchStatus = document.getElementById('launchStatus')  
 
@@ -76,7 +68,7 @@ if (cargoLevel > 10000) {
 
 
 }
-}
+//}
 
 
 
@@ -103,3 +95,11 @@ function pickPlanet(planets) {
 //module.exports.formSubmission = formSubmission;
 //module.exports.pickPlanet = pickPlanet; 
 //module.exports.myFetch = myFetch;
+
+
+//if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || 
+  //validateInput(cargoLevel) === "Empty" ) {
+  //  alert("User left field empty"); 
+ // } else if (validateInput(pilot) === "Is A Number" || validateInput(copilot) === "Is A Number" || validateInput(fuelLevel) === "Not A Number" || 
+//  validateInput(cargoLevel) === "Not A Number") {
+ //   alert("Incorrect field type");

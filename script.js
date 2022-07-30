@@ -13,14 +13,19 @@ window.addEventListener("load", function() {
    
    let listedPlanetsResponse = myFetch();
 
+  // console.log(listedPlanetsResponse) test
+
+
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);
+       console.log(listedPlanetsResponse);
 
+       //pick planet 
        let selectPlanet = pickPlanet(listedPlanets);
-       console.log(selectPlanet);
+       // test console.log(selectPlanet);
        addDestinationInfo(document, selectPlanet.name, selectPlanet.diameter, selectPlanet.star, 
         selectPlanet.distance, selectPlanet.moons, selectPlanet.image );
 

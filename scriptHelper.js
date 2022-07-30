@@ -1,10 +1,12 @@
 // Write your helper functions here!
-//require('isomorphic-fetch');
+require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-   // Here is the HTML formatting for our mission target div.
-   let inputName = document.getElementById('missionTarget');
-   inputName.innerHTML = `
+  // Here is the HTML formatting for our mission target div.
+
+   let missionTarget = document.getElementById('missionTarget');
+
+   missionTarget.innerHTML = `
 
             <h2>Mission Destination</h2>
                 <ol>
@@ -15,21 +17,21 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Number of Moons: ${moons}</li>
                 </ol>
                 <img src=${imageUrl}> `;
-                //
-
-//not sure how to call on an image, were the image is variable data like the other parameters?
 
 }
 function validateInput(testInput) {
-    let input =  Number(testInput) //Number is in js
-    if (testInput === "" ) {
-         return "Empty";
-    } else if (isNaN(input)) { //returns true 
-         return "Not A Number";  
-    } else if (!isNaN(input)) {
-        return "Is A Number"
-    }  
-}
+    let pilotInput;
+
+    if (testInput === "") {
+        pilotInput = "Empty";
+    } else if (isNaN(testInput)) {
+        pilotInput = "Not a number";
+    } else if (isNaN(testInput) === false) {
+        pilotInput = "Is a number";
+    };
+
+    return pilotInput;
+};
 
 
 

@@ -12,13 +12,14 @@ window.addEventListener("load", function() {
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    
    let listedPlanetsResponse = myFetch();
+   let form = document.querySelector("form")
 
   // console.log(listedPlanetsResponse) test
   form.addEventListener("submit", function(event){
     event.preventDefault() 
 
 
-    let form = document.querySelector("form")
+  
 
   let list = document.getElementById('faultyItems')
    let pilot = document.querySelector('input[name="pilotName"]').value; 

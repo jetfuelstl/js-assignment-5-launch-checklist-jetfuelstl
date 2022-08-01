@@ -20,17 +20,17 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 }
 function validateInput(testInput) {
-    let input;
+    function validateInput(testInput) {
+        let input =  Number(testInput) //Number is in js
+        if (testInput === "" ) {
+             return "Empty";
+        } else if (isNaN(input)) { //returns true 
+             return "Not A Number";  
+        } else if (!isNaN(input)) {
+            return "Is A Number"
+        }  
+    }
 
-    if (testInput === "") {
-        input = "Empty";
-    } else if (isNaN(testInput)) {
-        input = "Not a number";
-    } else if (isNaN(testInput) === false) {
-        input = "Is a number";
-    };
-
-    return input;
 };
 
 
@@ -50,10 +50,27 @@ validateInput(cargoLevel) === "Not A Number") {
         }
     };
 
+  // let launchStatus = document.getElementById("launchStatus")
+    // let faultyItems = document.getElementById("faultyItems")
+
+//     let pilot = document.querySelector('input[name="pilotName"]');
+//   validateInput(.value);
+//   let pilotStatus = document.getElementById("pilotStatus");
+//     let copilotInput = document.querySelector("input[name=copilotName]");
+//    let testCopilot = validateInput(copilotInput.value);
+//     let copilotStatus = document.getElementById("copilotStatus");
+//    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
+//     let testfuel = validateInput(fuelLevelInput.value);
+//    let fuelStatus = document.getElementById("fuelStatus");
+
+  let cargoLevelInput = document.querySelector("input[name=cargoMass]");
+    //let testcargo = validateInput(cargoLevelInput.value);
+    let cargoStatus = document.getElementById("cargoStatus"); 
 
 let launchStatus = document.getElementById('launchStatus')  
 
 let pilotStatus = document.getElementById("pilotStatus")
+let pilot = document.querySelector('[name="pilotName"]')
     pilotStatus.innerHTML = `pilot ${pilot} ready`
 
 let copilotStatus = document.getElementById("copilotStatus")

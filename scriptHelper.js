@@ -37,10 +37,12 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     //let form = document.queryselector('form')
  
-            if (validateInput(pilot) == 'Empty' || (validateInput(pilot)) === "Is a number" || validateInput(copilot) === 'Empty' || (validateInput(copilot)) === "Is a number" || validateInput(fuelLevel) === 'Empty' 
-            || validateInput(cargoMass) === 'Empty' || validateInput(cargoMass) === "Not a Number" || validateInput(fuelLevel === "Not A Number")){
+    // if (validateInput(pilot) == 'Empty' || (validateInput(pilot)) === "Is a number" || validateInput(copilot) === 'Empty' || (validateInput(copilot)) === "Is a number" || validateInput(fuelLevel) === 'Empty' 
+    //         || validateInput(cargoMass) === 'Empty' || validateInput(cargoMass) === "Not a Number" || validateInput(fuelLevel === "Not A Number")){
+    //         alert('All fields are require proper entries.');
+
+            if (validateInput(pilot) == 'Empty'|| validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoMass) === 'Empty' || validateInput(fuelLevel === "Not A Number")){
             alert('All fields are require proper entries.');
-           
                  
             }
              else if (validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Is a Number' || validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoMass) === 'Not a Number') {
